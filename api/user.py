@@ -20,7 +20,7 @@ def validation_user_page():
         validation = ValidationClass(**request.json)
     except pydantic.error_wrappers.ValidationError as err:
         return jsonify(str(err)), 415
-    return jsonify(validation), 200
+    return jsonify(str(validation)), 200
 
 
 @page_user.route("/user")
